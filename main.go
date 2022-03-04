@@ -16,16 +16,16 @@ import (
 const (
 	TOPIC_NOTIFICATIONS = "notification"
 	URL_BASE            = "https://api.telegram.org/bot"
-	CHAT_ID             = -1001767276075
 	METHOD              = "sendMessage"
 )
+const CHAT_ID int64 = -1001767276075
 
 func getURL() string {
 	return URL_BASE + os.Getenv("TOKEN") + "/" + METHOD
 }
 
 type Message struct {
-	Chat int    `json:"chat_id"`
+	Chat int64  `json:"chat_id"`
 	Text string `json:"text"`
 }
 
